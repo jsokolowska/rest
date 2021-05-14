@@ -1,6 +1,4 @@
 import requests
-from pprint import pprint
-import timeit
 import json
 
 
@@ -44,7 +42,7 @@ def present_sentiment(quotes, sentiments):
     print("\n")
 
 
-def present_best (quotes, sentiment):
+def present_best(quotes, sentiment):
     abs_s = [abs(entry) for entry in sentiment]
     idx = abs_s.index(max(abs_s))
     print("Most polarizing Kanye quote\n", abs_s[idx], ":", quotes[idx])
