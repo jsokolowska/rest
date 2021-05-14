@@ -32,15 +32,27 @@ def get_sentiment(quotes) -> []:
     return sentiments
 
 
+def present_quotes(quotes):
+    for i in range(len(quotes)):
+        print(f'{i}. {quotes[i]}')
+    print("\n")
+
+
+def present_sentiment(quotes, sentiments):
+    for i in range(len(quotes)):
+        print(f'{sentiments[i]}\t\t{quotes[i]}')
+    print("\n")
+
+
+def present_best (quotes, sentiment):
+    abs_s = [abs(entry) for entry in sentiment]
+    idx = abs_s.index(max(abs_s))
+    print("Most polarizing Kanye quote\n", abs_s[idx], ":", quotes[idx])
+
+
 n = read_and_validate()
 q = get_quotes(n)
-print("Quotes: ")
-pprint(q)
+present_quotes(q)
 s = get_sentiment(q)
-for i in range(len(s)):
-    print(f'{s[i]} :\t {q[i]}')
-
-
-
-
-
+present_sentiment(q, s)
+present_best(q,s)
