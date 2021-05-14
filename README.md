@@ -6,9 +6,11 @@ Go to [https://github.com/jsokolowska/Rest-with-Kanye](https://github.com/jsokol
  
 Open Windows command line and navigate to directory containing main.py. 
 Befor running this app install the required package with:
+
 ```pip install requests```
 
-To execute this app run:
+To run this app use the command:
+
 ```python main.py```
 
 ## Using the app
