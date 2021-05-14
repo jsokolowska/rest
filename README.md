@@ -11,10 +11,6 @@ Or if you don't have git CLI then go to [https://github.com/jsokolowska/Rest-wit
 Click on "Clone" button and choose "Download ZIP". Go to your downloads folder and extract code from the archive. 
 Then open your command line, set working directory to "Rest-with-Kanye" you just downloaded and proceed with next steps. 
 
-### Install dependencies
-In your command line run:
-
-``` pip install -r requirements.txt```
 ### Run
 To execute the application run:
 ``python main.py``
