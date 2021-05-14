@@ -15,7 +15,10 @@ def get_quotes(num) -> []:
 def read_and_validate() -> int:
     num = 0
     while num < 5 or num > 20:
-        num = int(input("Please enter number between 5 and 20: "))
+        try:
+            num = int(input("Please enter integer number between 5 and 20: "))
+        except ValueError:
+            print("Input not valid. Try again.")
     return num
 
 
@@ -24,7 +27,8 @@ def get_sentiment(quotes) -> []:
     headers = {'Accept': 'application/json', 'Content-Type': 'application/json'}
     sentiments = []
     for quote in quotes:
-        response = requests.post("https://sentim-api.herokuapp.com/api/v1/", data=json.dumps({"text": quote}), headers=headers)
+        response = requests.post("https://sentim-api.herokuapp.com/api/v1/", data=json.dumps({"text": quote}),
+                                 headers=headers)
         sentiment = response.json()["result"]["polarity"]
         sentiments.append(sentiment)
     return sentiments
